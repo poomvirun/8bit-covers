@@ -1,0 +1,12 @@
+<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TikTok login done</title>
+<style>body{font-family:system-ui,sans-serif;max-width:640px;margin:40px auto;padding:0 16px;line-height:1.6;background:#fff8ec;color:#2a2340}
+textarea{width:100%;height:120px;font-family:monospace;font-size:13px}button{font-size:16px;padding:8px 16px;margin-top:8px}</style></head>
+<body><h1 id="h">ล็อกอิน TikTok สำเร็จ</h1>
+<p id="p">ก๊อปลิงก์ในกล่องนี้ทั้งหมด แล้วส่งให้ Claude ในเธรด TikTok (โค้ดใช้ได้ครั้งเดียวและหมดอายุเร็ว รีบส่งนะครับ)</p>
+<textarea id="t" readonly></textarea><br><button onclick="navigator.clipboard.writeText(document.getElementById('t').value)">ก๊อป</button>
+<script>
+var q=new URLSearchParams(location.search);
+if(q.get('error')){document.getElementById('h').textContent='ล็อกอินไม่สำเร็จ';document.getElementById('p').textContent=q.get('error')+' '+(q.get('error_description')||'');}
+document.getElementById('t').value=location.href;
+</script></body></html>
